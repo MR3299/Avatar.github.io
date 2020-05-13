@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Avatar</title>
+</head>
+
+<body>
+
+    <section id="hero">
+
+        <div class="start">
+            <label for="">what does your name says about your personality?</label>
+        </div>
+        <div class="container col-sm-8 mx-3">
+            <div class="wra">
+                <div class="n">
+                    <label for="">enter your name</label>
+                </div>
+                <div class="tt">
+                    <input type="text" id="name" name="name" spellcheck="false">
+                </div>
+            </div>
+            <div class="imgg" id="xx">
+                <img src="//joeschmoe.io/api/v1/jack" alt="img">
+            </div>
+            <div>
+
+                <a href="#" id="cl" onclick="required()"> <button class="bttn"> click me </button></a>
+
+            </div>
+            <div class="dwn">
+                <a class="d" href="//joeschmoe.io/api/v1/jack" onclick="required()" download> <button class="btn"><i
+                            class="fa fa-download"></i>
+                        Download</button> </a>
+
+                <!-- <a href="download.php?file=//joeschmoe.io/api/v1/jack/<?=$row['file_name']?>"><button class="btn"><i
+                            class="fa fa-download"></i>Download</button></a>
+                <!-- <button onclick="document.getElementById('xx').click()">Download!</button>
+                <a id="link" href="//joeschmoe.io/api/v1/jack" download hidden></a> -->
+            </div>
+
+        </div>
+        <div class="footr">
+            <h2>Copyright © 2020 Milan. All rights reserved</h2>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- script for vaidation on empty field -->
+
+    <script>
+        function required() {
+            var empt = document.getElementById("name").value;
+            if (empt == "") {
+                alert("Please input name!!!");
+                return false;
+            }
+            else {
+                // alert('Code has accepted : you can try another');
+                return true;
+            }
+        }
+
+    </script>
+
+    <!-- end script for vaidation on empty field -->
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('a').click(function () {
+                const nm = $('#name').val();
+                $('img').attr('src', `https://joeschmoe.io/api/v1/${nm}`)
+                $('.d').attr('href', `https://joeschmoe.io/api/v1/${nm}`)
+            })
+        });
+    </script>
+
+    <script>
+        var input = document.getElementById("name");
+        input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("cl").click();
+            }
+        });
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
